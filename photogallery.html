@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aircrafts Gallery</title>
+    <script>
+        //Functions
+        function upDate(name){
+            if (name == "emirates")
+            document.querySelector(".main-window").style.backgroundImage = 'url("../PhotoGallery/emirates.jpg")';
+            else if (name == "indigo")
+           document.querySelector(".main-window").style.backgroundImage = 'url("../PhotoGallery/indigo.jpg")';
+            else if (name == "southwest")
+            document.querySelector(".main-window").style.backgroundImage = 'url("../PhotoGallery/southwest.jpg")';
+            else{
+               document.querySelector("#main-des") = "No Value found" 
+            }
+        }
+        function unDo(){
+            document.querySelector(".main-window").style.backgroundImage = 'url("../PhotoGallery/sample.jpg")';
+        }
+
+        airlines = ['Akasa', 'Lufthansa', 'Fly91'];
+
+        function addAir(){
+            newAir = prompt("Suggest an airliner you want to add in list");
+            airlines.push(newAir);
+            document.querySelector(".suggestions").innerHTML = airlines;
+        }
+
+    </script>
+</head>
+<body>
+    <h1 id="maintitle">Aircraft Model</h1>
+    <div class="main-window">
+        <h2 id="display-title">Model</h2>
+        <p class="main-des">Details</p>
+    </div>
+    <div class="sub-windows">
+        <div class="window1" onmouseover="upDate('emirates')" onmouseout="unDo()">
+            <p class="des-1">Emirates</p>
+        </div>
+        <div class="window2" onmouseover="upDate('southwest')" onmouseout="unDo()">
+            <p class="des-2">Southwest</p>
+        </div>
+        <div class="window3" onmouseover="upDate('indigo')" onmouseout="unDo()">
+            <p class="indigo">Indigo</p>
+        </div>
+    </div>
+    <button class="suggest" onclick="addAir()">Suggest an airline</button>
+    <p class="suggestions">List</p>
+</body>
+<style>
+    
+    
+    #maintitle{
+        color: blueviolet;
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .main-window{
+        border: solid;
+        border-radius: 20px;
+        border-color:rgb(59, 3, 3);
+        height: 250px;
+        width:400px;
+        margin: 0 auto;
+        background-color: aquamarine;
+        text-align: center;
+        background-image: url("../PhotoGallery/sample.jpg") ;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .sub-windows{
+        border: solid rgb(252, 252, 253);
+        border-radius: 15px;
+        margin: 0 auto;
+        margin: 40px;
+        height: 200px;
+        display:flex;
+    }
+    .window1{
+        border: solid black;
+        width: 300px;
+        height: 180px;
+        margin: auto;
+        border-radius: 15px;
+        background-image: url("../PhotoGallery/emirates.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+        justify-content: center;
+    }
+    .window2{
+        border: solid black;
+        width: 300px;
+        height: 180px;
+        margin: auto;
+        border-radius: 15px;
+        background-image: url("../PhotoGallery/southwest.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+        justify-content: center;
+    }
+    .window3{
+        border: solid black;
+        width: 300px;
+        height: 180px;
+        margin: auto;
+        border-radius: 15px;
+        background-image: url("../PhotoGallery/indigo.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+        justify-content: center;
+    }
+
+    #display-title{
+        color: blanchedalmond;
+    }
+    .main-des{
+        margin-top: 150px;
+    }
+    
+</style>
+</html>
